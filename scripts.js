@@ -14,7 +14,7 @@ function defValue(){
 function validateLines(array){
     let i = 0;
     console.log(array)
-    while (i < 9){
+    while (i < 81){
         console.log(array[i])
         if ( (array [i] == array[i+1]) && (array[i+1] == array[i+2]) && (array[i] != '')){
             return true;
@@ -27,21 +27,30 @@ function validateLines(array){
 function validateColumns(array){
     let i = 0;
     console.log(array)
-    while (i < 3){
-        console.log(array[i])
-        if ( (array [i] == array[i+3]) && (array[i+3] == array[i+6]) && (array[i] != '')){
-            return true;
+    let j = 0; 
+    while(j<9){
+        let a = i+3
+        while (i < a){
+            console.log(array[i])
+            if ( (array [i] == array[i+3]) && (array[i+3] == array[i+6]) && (array[i] != '')){
+                return true;
+            }
+            i+=1;
         }
-        i+=1;
+        i += 6;
+        j++;
     }
     return false
 }
 
 function validateDiagonal(array){
-
-    if ( ((array [0] == array[4]) && (array[4] == array[8]) && (array[0] != '')) ||( (array [2] == array[4]) && (array[4] == array[6]) && (array[2] != ''))) {
-        return true;
+    
+    for(let i = 0; i<9; i++){
+        if ( ((array [0 +(i*9)] == array[4+(i*9)]) && (array[4 +(i*9)] == array[8 +(i*9)]) && (array[0 +(i*9)] != '')) ||( (array [2 +(i*9)] == array[4 +(i*9)]) && (array[4 +(i*9)] == array[6 +(i*9)]) && (array[2 +(i*9)] != ''))) {
+            return true;
+        }
     }
+    
     return false
 }
 
@@ -60,8 +69,9 @@ function  validateGame(){
 }
 
 function setFieldValue(event){
-    const fieldClassName = event.target.className
-    const field = document.getElementsByClassName(fieldClassName)[0];
+    console.log(event)
+    const fieldId = event.target.id
+    const field = document.getElementById(fieldId);
     if (field.innerHTML == ''){
         defValue()
         field.innerHTML = sessionStorage.getItem("value")

@@ -1,6 +1,60 @@
+.mother-line{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.game {
+    width: 350px;
+    height: 350px;
+    border: 4px solid #000000;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game0{
+    border-left-width: 0;
+    border-top-width: 0;
+}
+
+#game1{
+    border-top-width: 0;
+}
+
+#game2{
+    border-top-width: 0;
+    border-right-width: 0;
+}
+
+#game3{
+    border-left-width: 0;
+}
+
+#game5{
+    border-right-width: 0;
+}
+
+#game6{
+    border-left-width: 0;
+    border-bottom-width: 0;
+}
+
+#game7{
+    border-bottom-width: 0;
+}
+
+#game8{
+    border-right-width: 0;
+    border-bottom-width: 0;
+}
+
+
 .line{
     display: flex;
-    align-content: space-evenly;
+    justify-content: center;
     width: 100%;
 }
 .scratched_line{
@@ -15,9 +69,10 @@
     transform-origin: 0 0; /* Ponto de origem da transformação */
 }
 
+
 a div{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background-color: white;
     border-color: black;
     font-size: 200;
