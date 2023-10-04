@@ -75,8 +75,20 @@ function setFieldValue(event){
     if (field.innerHTML == ''){
         defValue()
         field.innerHTML = sessionStorage.getItem("value")
+        setZoom(event);
         validateGame()
     }
     
 }
 
+function setZoom(event){
+    const boardNumber = (event.target.className).slice(-1);
+    if (sessionStorage.getItem("Zoom")){
+        const board = document.getElementById("game"+sessionStorage.getItem("Zoom"));
+        board.className = "game"
+    }
+    sessionStorage.setItem("Zoom",boardNumber)
+    const board = document.getElementById("game"+boardNumber)
+    board.className = "game zoom"
+    
+}
