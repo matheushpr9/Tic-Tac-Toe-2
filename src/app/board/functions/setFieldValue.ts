@@ -1,6 +1,7 @@
 import React from "react"
 import defValue from "./defValue";
 import validateMiniGame from "./validateMiniGame/validateMiniGame";
+import setZoom from "./setZoom";
 
 export const setFieldValue = (event:React.MouseEvent)=>{
 
@@ -12,7 +13,9 @@ export const setFieldValue = (event:React.MouseEvent)=>{
     if ( field!.innerHTML ==''){
         defValue();
         field!.innerHTML = sessionStorage.getItem("value")! ;
+        
         validateMiniGame();
+        setZoom(event);
     }
     
 }   
