@@ -7,7 +7,7 @@ interface FieldAttributes {
 export function Field(i: FieldAttributes){
     return(
         <a onClick={event => setFieldValue(event)}>
-            <div className={"column"+i} id={"field"+i.i}></div>
+            <div className={"field"} id={"field"+i.i}></div>
         </a>
     )
 }

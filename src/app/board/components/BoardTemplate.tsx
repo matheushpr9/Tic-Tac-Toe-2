@@ -1,4 +1,5 @@
 import Line from "./game/Line";
+import { ToastContainer } from "react-toastify";
 
 export default function BoardTemplate(){
     
@@ -9,6 +10,7 @@ export default function BoardTemplate(){
 
     return (
          <div>
+            <ToastContainer />
             {lines}
          </div>
             
