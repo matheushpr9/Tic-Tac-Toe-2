@@ -3,8 +3,9 @@ import vertical from "./vertical";
 import diagonal from "./diagonal";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import changeMiniGame from "../changeMiniGame";
 
-export default function  validateMiniGame(){
+export default function  validateMiniGame(event: React.MouseEvent){
     const fields = document.getElementsByClassName("field");
     const fieldsValue = [];
     
@@ -28,7 +29,7 @@ export default function  validateMiniGame(){
 
         notify();
 
-
+        changeMiniGame(event);
 
         //location.reload()
     }

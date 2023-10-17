@@ -1,18 +1,16 @@
 export default function vertical(array: String[]){
     let i = 0;
-    let j = 0;
 
-    while(j<9){
-        let a = i+3
-        while (i < a){
-    
-            if ( (array [i] == array[i+3]) && (array[i+3] == array[i+6]) && (array[i] != '')){
-                return true;
+    while(i < array.length){
+       let j = i
+        while(j < i+3){
+            if(array[j]== array[j+3] && array[j+3] == array[j+6] && array[j] != ''){
+                return true
+                
             }
-            i+=1;
+            j+=1
         }
-        i += 6;
-        j++;
+        i+=9
     }
     return false
 }

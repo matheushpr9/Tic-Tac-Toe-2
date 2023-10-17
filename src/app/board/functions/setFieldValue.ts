@@ -14,7 +14,7 @@ export const setFieldValue = (event:React.MouseEvent)=>{
         defValue();
         field!.innerHTML = sessionStorage.getItem("value")! ;
         
-        validateMiniGame();
+        validateMiniGame(event);
         setZoom(event);
     }
     
