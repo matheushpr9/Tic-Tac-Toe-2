@@ -7,12 +7,13 @@ export const setFieldValue = (event:React.MouseEvent)=>{
 
     
     const fieldId = (event!.target as HTMLAnchorElement).id;
+    const gameId = (event!.target as HTMLAnchorElement).parentElement?.parentElement?.parentElement!.id;
     
     const field = document.getElementById(fieldId);
 
-    if ( field!.innerHTML ==''){
+    if ( (field!.innerHTML ==''&&  "game"+sessionStorage.getItem("Zoom") == gameId )||(sessionStorage.getItem("Zoom") == null)){
         defValue();
-        field!.innerHTML = sessionStorage.getItem("value")! ;
+        field!.innerHTML = sessionStorage.getItem("value")!;
         
         validateMiniGame(event);
         setZoom(event);
