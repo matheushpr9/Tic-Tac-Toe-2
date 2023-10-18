@@ -11,6 +11,6 @@ export default function defValue(){
     }
     
     else{
-        localStorage['value'] = "O";
+        localStorage['value'] = "X";
     }
 }
