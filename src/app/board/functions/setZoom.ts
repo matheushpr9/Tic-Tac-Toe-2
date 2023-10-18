@@ -5,12 +5,12 @@ export default function setZoom(event:React.MouseEvent){
     const game = (event!.target as HTMLAnchorElement).id;
     const boardNumber = game.length == 6 ? game.slice(-1) : parseInt(game.slice(-2)) %  9;
     
-    if(sessionStorage.getItem("Zoom")){
-        const board = document.getElementById("game"+sessionStorage.getItem("Zoom"));
+    if(localStorage["Zoom"]){
+        const board = document.getElementById("game"+localStorage["Zoom"]);
         board!.className = "game"
     }
 
-    sessionStorage.setItem("Zoom",boardNumber.toString( ))
+    localStorage["Zoom"] = boardNumber.toString()
     const board = document.getElementById("game"+boardNumber)
     
     if((board!.childNodes[0]! as HTMLElement).className != "game_done" || board == null){

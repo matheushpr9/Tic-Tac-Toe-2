@@ -1,15 +1,16 @@
 export default function defValue(){
-    const value = sessionStorage.getItem("value");
+    const value = localStorage['value'];
+    console.log(value)
 
     if (value == null){
-        sessionStorage.setItem("value","X");
+        localStorage['value'] = "X";
     }
 
-    else if(value =="O"){
-        sessionStorage.setItem("value","X");
+    else if(value =="X"){
+        localStorage['value'] = "O";
     }
     
     else{
-        sessionStorage.setItem("value","O");
+        localStorage['value'] = "O";
     }
 }

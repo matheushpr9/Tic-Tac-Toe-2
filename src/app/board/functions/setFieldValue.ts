@@ -5,15 +5,25 @@ import setZoom from "./setZoom";
 
 export const setFieldValue = (event:React.MouseEvent)=>{
 
+    const fields = Array.prototype.slice.call(document.getElementsByClassName("field"));
+    console.log(fields)
+
+    if(fields.every((value)=> value.innerHTML =='' || value.innerHTML == null)){
+        localStorage.removeItem("value");
+        localStorage.removeItem("Zoom");
+    }
     
     const fieldId = (event!.target as HTMLAnchorElement).id;
     const gameId = (event!.target as HTMLAnchorElement).parentElement?.parentElement?.parentElement!.id;
     
     const field = document.getElementById(fieldId);
 
-    if ( (field!.innerHTML ==''&&  "game"+sessionStorage.getItem("Zoom") == gameId )||(sessionStorage.getItem("Zoom") == null)){
+    console.log(localStorage["Zoom"])
+
+    if ( (field!.innerHTML ==''&&  "game"+localStorage["Zoom"] == gameId )||(localStorage["Zoom"] == null)){
         defValue();
-        field!.innerHTML = sessionStorage.getItem("value")!;
+        
+        field!.innerHTML = localStorage["value"]!;
         
         validateMiniGame(event);
         setZoom(event);
