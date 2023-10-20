@@ -162,3 +162,13 @@ a div{
   border-right-width: 0;
   border-bottom-width: 0;
 }
+
+#PlayButton{
+  width: 30px;
+  height: 10px;
+}
+
+div PlayButton{
+  width: 100%;
+  height: 100%;
+}

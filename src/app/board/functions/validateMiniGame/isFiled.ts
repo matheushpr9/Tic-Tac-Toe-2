@@ -1,8 +1,8 @@
 export default function isFiled(array : String[]){
 
-    const isFiled = (field: String) => field === "X" || field ==="O"
+    const validate = (field: String) => field === "X" || field ==="O"
 
-    if(array.every(isFiled)){
+    if(array.every(validate)){
         return true
     }
     return false

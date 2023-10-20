@@ -5,8 +5,8 @@ export default function vertical(array: String[]){
        let j = i
         while(j < i+3){
             if(array[j]== array[j+3] && array[j+3] == array[j+6] && array[j] != ''){
+                console.log("vertical")
                 return true
-                
             }
             j+=1
         }

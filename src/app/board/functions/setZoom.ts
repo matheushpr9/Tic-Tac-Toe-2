@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import cleanZoomCaches from './cache/cleanZoomCaches';
 
 export default function setZoom(event:React.MouseEvent){
     const game = (event!.target as HTMLAnchorElement).id;
@@ -28,6 +29,7 @@ export default function setZoom(event:React.MouseEvent){
             theme: "colored",
             });
             notify()
+        cleanZoomCaches();
     }
     
 }

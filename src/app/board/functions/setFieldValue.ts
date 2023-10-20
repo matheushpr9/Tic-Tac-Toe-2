@@ -2,6 +2,8 @@ import React from "react"
 import defValue from "./defValue";
 import validateMiniGame from "./validateMiniGame/validateMiniGame";
 import setZoom from "./setZoom";
+import cleanValuesCaches from "./cache/cleanValuesCache";
+import cleanZoomCaches from "./cache/cleanZoomCaches";
 
 export const setFieldValue = (event:React.MouseEvent)=>{
 
@@ -9,8 +11,8 @@ export const setFieldValue = (event:React.MouseEvent)=>{
     console.log(fields)
 
     if(fields.every((value)=> value.innerHTML =='' || value.innerHTML == null)){
-        localStorage.removeItem("value");
-        localStorage.removeItem("Zoom");
+        cleanValuesCaches();
+        cleanZoomCaches();
     }
     
     const fieldId = (event!.target as HTMLAnchorElement).id;
