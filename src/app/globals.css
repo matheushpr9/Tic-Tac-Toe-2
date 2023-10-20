@@ -25,6 +25,16 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.menu_div{
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .mother-line{
   width: 100%;
   display: flex;
@@ -163,12 +173,18 @@ a div{
   border-bottom-width: 0;
 }
 
-#PlayButton{
-  width: 30px;
-  height: 10px;
+.PlayButton{
+  padding: 4px;
+  padding-left: 8px;
+  padding-right:8px ;
+  margin: 8px;
+  transition: transform .2s;
+  background-color: #ffffff;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+}
+.PlayButton:hover{
+  transform: scale(1.5);
 }
 
-div PlayButton{
-  width: 100%;
-  height: 100%;
-}
